@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+       Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент групи КН-31 Ємельянов В'ячеслав </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Завдання №2</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="p_background">Сформувати...
+          <sub>ij</sub>=(-1)<sup>i</sup>*(i+2j)/3
+        </p>
+        <ion-item>
+          <ion-label position="floating">N</ion-label>
+          <ion-input type="number" id="a" value="3" #Inputn></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="arrayras(Inputn.value)">Сформувати масив</ion-button>
+        <ion-item>
+          <ion-grid>
+            <ion-row *ngFor="let i of a">
+              <ion-col *ngFor="let j of i" [ngStyle]="{backgroundColor:getColor(j)}">{{ j }}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-card-content>
+  </ion-card>
+</ion-content> -->
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Matrix Size (N)</ion-label>
+    <ion-input type="number" [(ngModel)]="n"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="generateMatrix()">Generate Matrix</ion-button>
+
+  <ion-grid *ngIf="matrix">
+    <ion-row *ngFor="let row of matrix">
+      <ion-col *ngFor="let element of row">
+        <div [ngStyle]="{ 'background-color': isPositiveEven(element) ? 'green' : '' }">{{ element }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна №1</ion-title>
+  </ion-toolbar>
+</ion-footer>

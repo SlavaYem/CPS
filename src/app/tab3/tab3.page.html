@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+       Лабораторна робота №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент групи КН-31 Ємельянов В'ячеслав </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Start value (a)</ion-label>
+    <ion-input type="number" [(ngModel)]="a"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">End value (b)</ion-label>
+    <ion-input type="number" [(ngModel)]="b"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="calculateProduct()">Calculate Product</ion-button>
+
+  <ion-item *ngIf="product !== undefined">
+    <ion-label>Product of multiples of 6:</ion-label>
+    <ion-input type="number" readonly value="{{ product }}"></ion-input>
+  </ion-item>
+</ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>Лабораторна №1</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  
