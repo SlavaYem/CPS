@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>file</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>ЛР-3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>Читання даних</ion-text>
+      <ion-button expand="block" (click)="load()">Завантажити</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data_users; index as i" detail (click)="toggleDetails(i)">
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <p [ngStyle]="{ color: getGreenColor(item.age, max) }"><span>Імя: </span>{{ item.name }} <span>Вік: </span>{{ item.age }}</p>
+            </ion-label>
+            <ion-text *ngIf="showDetails[i]">
+              <h2 [ngStyle]="{ color: getBlueColor(item.mother.age, min) }">Мати</h2>
+              {{ item.mother.name }} {{ item.mother.age }}
+              <h2>Діти</h2>
+              <ion-text *ngFor="let item1 of item.children; index as j">
+                {{ item1 }}
+              </ion-text>
+              <h2>Основна інформація:</h2>
+              {{ getYes(item.married) }} {{ getDog(item.dog) }}
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>file</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>ЛР-3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>Читання даних</ion-text>
+      <ion-button expand="block" (click)="load()">Завантажити</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item
+            button
+            *ngFor="let item of data_students; index as i"
+            detail
+            (click)="toggleDetails(i)"
+            [style.backgroundColor]="birthdateColors[item.birthdate]"
+          >
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <p>
+                <span>ПІБ: </span>{{ item.name }}<br />
+                <span>Дата народження: </span>{{ item.birthdate }}<br />
+                <span>Адреса: </span>{{ item.address }}<br />
+                <span>Телефон: </span>{{ item.phone }}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
